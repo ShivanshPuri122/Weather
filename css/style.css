@@ -1,6 +1,22 @@
-.background-img{
-    background-image: url('../assets/background.jpg');
+/* Background image for entire page */
+body {
+    background: url('../assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.background-img {
+    min-height: 100vh;
+}
+
+
+.btn-primary {
+    background: rgba(13, 59, 102, 0.8);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: rgba(13, 59, 102, 1);
 }
