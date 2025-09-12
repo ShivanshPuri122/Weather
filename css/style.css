@@ -3,11 +3,11 @@ body {
     background: url('../assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
+    padding-top:70px;
+    font-family: Arial, sans-serif;
+    margin: 0;
 }
 
-.background-img {
-    min-height: 100vh;
-}
 
 
 .btn-primary {
@@ -19,4 +19,27 @@ body {
 
 .btn-primary:hover {
     background: rgba(13, 59, 102, 1);
+}
+
+.recent-location{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index: 1030;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.search-section{
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* Card for recent locations */
+#recentContainer {
+  min-height: 150px;
 }
