@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = document.getElementById('userEmail');
     const feedback = document.getElementById('feedback');
     const alertContainer = document.getElementById('alert-container');
+    const charCount = document.getElementById('charCount'); // counter element
 
     // Function to show Bootstrap alert
     function showAlert(message, type = 'danger') {
@@ -17,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // prevent default submission
-        alertContainer.innerHTML = ''; // clear previous alerts
+        event.preventDefault();
+        alertContainer.innerHTML = '';
 
         let valid = true;
 
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showAlert('Please enter your first and last name.');
         }
 
-        // Email validation using regex
+        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email.value.trim())) {
             valid = false;
@@ -44,16 +45,28 @@ document.addEventListener('DOMContentLoaded', function () {
         if (valid) {
             showAlert(`Thank you, ${firstName.value} ${lastName.value}! Your feedback has been submitted.`, 'success');
             form.reset();
+            charCount.textContent = '(0/250)'; // reset counter
+            charCount.classList.remove('text-danger');
+            charCount.classList.add('text-muted');
             form.classList.remove('was-validated');
         } else {
             form.classList.add('was-validated');
         }
     });
 
-    // Limit feedback in real-time
+    // Live character counter with color change
     feedback.addEventListener('input', function () {
         if (feedback.value.length > 250) {
             feedback.value = feedback.value.slice(0, 250);
+        }
+        charCount.textContent = `(${feedback.value.length}/250)`;
+
+        if (feedback.value.length === 250) {
+            charCount.classList.remove('text-muted');
+            charCount.classList.add('text-danger'); // red
+        } else {
+            charCount.classList.remove('text-danger');
+            charCount.classList.add('text-muted'); // gray
         }
     });
 });
