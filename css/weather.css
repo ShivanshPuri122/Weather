@@ -1,0 +1,121 @@
+/* General Page Styling */
+body {
+    background: linear-gradient(to right, #d7e1f5, #c3d6ff);
+    font-family: "Segoe UI", Tahoma,  Verdana, sans-serif;
+    color: #f0f0f0;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Headings */
+h2{
+    color: #00d4ff;
+    margin-bottom: 15px;
+    font-weight: bold;
+
+}
+ h4 {
+    font-weight: 600;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+/* Weather Cards (Current, Hourly, Weekly) */
+.weather-card {
+    margin: 20px 0;
+    border-radius: 15px;
+    background: rgba(0, 71, 143, 0.7);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: none;
+    color: #f0f0f0;
+}
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Current Weather */
+#currentWeather h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+#currentWeather p {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: #e0e0e0;
+}
+
+/* Weather Info Box (Current, Hourly, Weekly) */
+.weather-info-box {
+    width: 120px;
+    min-height: 130px;
+    background: rgba(0, 120, 200, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    color: #f0f0f0;
+    text-align: center;
+}
+.weather-info-box:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 150, 230, 0.7);
+}
+.weather-info-box h5,
+.weather-info-box strong {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: #00d4ff;
+}
+.weather-info-box p,
+.weather-info-box h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f0f0f0;
+}
+.weather-info-box img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+/* Hourly & Weekly Layout */
+#hourlyWeather,
+#weeklyWeather {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .weather-info-box {
+        width: 100px;
+        min-height: 110px;
+    }
+}
+@media (max-width: 576px) {
+    #currentWeather h3 {
+        font-size: 1.5rem;
+    }
+    .weather-info-box {
+        width: 90px;
+        min-height: 100px;
+    }
+}
