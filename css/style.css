@@ -28,6 +28,7 @@ body {
     width:100%;
     z-index: 1030;
     border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
 
 .search-section{
@@ -42,4 +43,13 @@ body {
 /* Card for recent locations */
 #recentContainer {
   min-height: 150px;
+}
+
+
+#recentCards .card {
+  transition: transform 0.2s ease-in-out;
+}
+
+#recentCards .card:hover {
+  transform: scale(1.05);
 }
