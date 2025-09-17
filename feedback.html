@@ -44,53 +44,58 @@
     </nav>
 
     <!-- Main Container for Feedback Form -->
-<div class="container form-container d-flex justify-content-center align-items-cente mt-5">
-    <!-- Form Card with Glass Effect -->
+    <div class="container form-container d-flex justify-content-center align-items-cente mt-5">
+        <!-- Form Card -->
 
-    <div class="bg-white bg-opacity-75 p-5 rounded shadow w-75 w-md-50 r">
-        
-        <!--Alert-->
-        <div id="alert-container" class="mb-3"></div>
+        <div class="bg-white bg-opacity-75 p-5 rounded shadow w-75 w-md-50 r">
 
-        <!-- Feedback Form -->
-        <form id="feedbackForm" novalidate>
-            <!-- Row for Name Fields -->
-            <div class="row mb-3">
-                <div class="col-md-4 mb-2">
-                    <label class="form-label" for="firstName">First Name</label>
-                    <input class="form-control" type="text" id="firstName" placeholder="Enter First Name" required>
+            <!--Alert-->
+            <div id="alert-container" class="mb-3"></div>
+
+            <!-- Feedback Form -->
+            <form id="feedbackForm" novalidate>
+                <!-- Row for Name Fields -->
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label" for="firstName">First Name</label>
+                        <input class="form-control" type="text" id="firstName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label" for="middleName">Middle Name</label>
+                        <input class="form-control" type="text" id="middleName" placeholder="Enter Middle Name">
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label" for="lastName">Last Name</label>
+                        <input class="form-control" type="text" id="lastName" placeholder="Enter Last Name" required>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-2">
-                    <label class="form-label" for="middleName">Middle Name</label>
-                    <input class="form-control" type="text" id="middleName" placeholder="Enter Middle Name">
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label class="form-label" for="userEmail">Email</label>
+                    <input type="email" class="form-control" id="userEmail" placeholder="Enter Your Email" required>
                 </div>
-                <div class="col-md-4 mb-2">
-                    <label class="form-label" for="lastName">Last Name</label>
-                    <input class="form-control" type="text" id="lastName" placeholder="Enter Last Name" required>
+
+                <!-- Feedback Textarea -->
+                <div class="mb-3">
+                    <label class="form-label" for="feedback">
+                        Feedback <span id="charCount" class="text-muted">(0/250)</span>
+                    </label>
+                    <textarea class="form-control" id="feedback" rows="4" placeholder="Enter Your Feedback"
+                        maxlength="250" required></textarea>
                 </div>
-            </div>
 
-            <!-- Email Field -->
-            <div class="mb-3">
-                <label class="form-label" for="userEmail">Email</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter Your Email" required>
-            </div>
 
-            <!-- Feedback Textarea -->
-            <div class="mb-3">
-                <label class="form-label" for="feedback">Feedback</label>
-                <textarea class="form-control" id="feedback" rows="4" placeholder="Enter Your Feedback" required></textarea>
-            </div>
 
-            <!-- Submit Button -->
-            <div class="text-center">
-                <button class="btn btn-primary px-4" type="submit">Submit</button>
-            </div>
-        </form>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button class="btn btn-primary px-4" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<script src="javascript/feedback_validate.js"></script>
+    <script src="javascript/feedback_validate.js"></script>
 
 </body>
 
