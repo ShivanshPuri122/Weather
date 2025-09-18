@@ -32,7 +32,7 @@ body {
 }
 
 .search-section{
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 350px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,4 +52,17 @@ body {
 
 #recentCards .card:hover {
   transform: scale(1.05);
+}
+
+#recentCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  gap: 15px;               /* Space between cards */
+  margin-top: 20px;
+}
+
+#recentCards .card {
+  max-width: 160px;
+  text-align: center;
 }
