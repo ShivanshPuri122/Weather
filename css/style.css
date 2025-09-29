@@ -3,13 +3,12 @@ body {
     background: url('../assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
-    padding-top:70px;
+    padding-top: 70px;
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
-
-
+/* Buttons */
 .btn-primary {
     background: rgba(13, 59, 102, 0.8);
     border: none;
@@ -21,48 +20,62 @@ body {
     background: rgba(13, 59, 102, 1);
 }
 
-.recent-location{
+/* Recent location bar fixed at bottom */
+.recent-location {
     position: fixed;
-    bottom:0;
-    left:0;
-    width:100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     z-index: 1030;
     border-top: 1px solid rgba(0,0,0,0.1);
     margin-top: 20px;
 }
 
-.search-section{
-    min-height: calc(100vh - 350px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.search-section {
+  min-height: calc(100vh - 350px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+.search-section form {
+  width: 90%;         /* full width on small screens */
+  max-width: 500px;   /* limit size on larger screens */
+  margin: 0 auto;     /* center horizontally */
+}
+
+@media (min-width: 768px) {
+    .search-section form {
+        width: 70%;      /* medium screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .search-section form {
+        width: 50%;      /* large screens */
+    }
+}
 
 /* Card for recent locations */
 #recentContainer {
-  min-height: 150px;
+    min-height: 150px;
 }
 
-
 #recentCards .card {
-  transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    max-width: 160px;
+    text-align: center;
 }
 
 #recentCards .card:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 #recentCards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center horizontally */
-  gap: 15px;               /* Space between cards */
-  margin-top: 20px;
-}
-
-#recentCards .card {
-  max-width: 160px;
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
