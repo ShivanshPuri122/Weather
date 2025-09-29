@@ -69,12 +69,12 @@ async function fetchWeather() {
             return;
         }
 
-        // --- UV & AQI ---
+        //UV & AQI 
         const uvData = await (await fetch(`https://api.openweathermap.org/data/2.5/uvi?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}`)).json();
         const aqiData = await (await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}`)).json();
         const aqiValue = aqiData.list[0].main.aqi;
 
-        // --- Current Weather ---
+        //Current Weather
         currentDiv.innerHTML = "";
         const features = [
             { label: "Temperature", value: currentData.main.temp + "°C", icon: `https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png` },
@@ -96,7 +96,7 @@ async function fetchWeather() {
             currentDiv.appendChild(box);
         });
 
-        // --- Forecasts ---
+        // Forecasts
         const query = lat && lon ? `lat=${coord.lat}&lon=${coord.lon}` : `q=${city}`;
         const forecastData = await (await fetch(`https://api.openweathermap.org/data/2.5/forecast?${query}&appid=${apiKey}&units=metric`)).json();
 

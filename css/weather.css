@@ -43,7 +43,6 @@ h2{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Current Weather */
 #currentWeather h3 {
     font-size: 2rem;
     font-weight: bold;
@@ -94,7 +93,6 @@ h2{
     margin-bottom: 5px;
 }
 
-/* Hourly & Weekly Layout */
 #hourlyWeather,
 #weeklyWeather {
     display: flex;
